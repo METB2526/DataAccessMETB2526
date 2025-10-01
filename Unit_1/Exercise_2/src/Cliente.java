@@ -8,10 +8,9 @@ public class Cliente extends Persona
     private String _telephone;
     private Set<Empresa> _isClientOf = new HashSet<>();
 
-    public Cliente(String name, LocalDate birthDay, String phoneNumber)
+    public Cliente(String name, String birthDay, String phoneNumber)
     {
-        setName(name);
-        setDateOfBirth(birthDay);
+        super(name, birthDay);
         setTelephone(phoneNumber);
     }
 
@@ -29,7 +28,7 @@ public class Cliente extends Persona
                _telephone = value;
         }
         else
-        {
+       {
             throw new IllegalArgumentException(INVALID_PHONE_NUMBER);
         }
     }

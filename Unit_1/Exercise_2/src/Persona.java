@@ -1,5 +1,7 @@
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 
 public class Persona
@@ -10,6 +12,12 @@ public class Persona
 
     private String _name;
     private LocalDate _dateOfBirth;
+
+    public Persona(String name, String birthDate)
+    {
+        setName(name);
+        setDateOfBirth(birthDate);
+    }
 
     public String getName() {
         return _name;
@@ -28,13 +36,18 @@ public class Persona
         }
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth)
+    /**
+     * @param birthDate mandatary format date "yyyy/mm/dd".
+     */
+    public void setDateOfBirth(String birthDate) throws DateTimeException
     {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDate dateOfBirth = LocalDate.parse(birthDate, formatter);
+
         if(dateOfBirth.isAfter(LocalDate.now()))
         {
             throw new IllegalArgumentException(INVALID_DATE_OF_BIRTH);
         }
-
         _dateOfBirth = dateOfBirth;
     }
 
