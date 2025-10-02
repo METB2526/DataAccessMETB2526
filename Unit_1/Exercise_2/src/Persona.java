@@ -48,6 +48,7 @@ public class Persona
         {
             throw new IllegalArgumentException(INVALID_DATE_OF_BIRTH);
         }
+
         _dateOfBirth = dateOfBirth;
     }
 
@@ -72,6 +73,6 @@ public class Persona
             return;
         }
 
-        System.out.println("Name: " + getName() + "\n Age: " + getDateOfBirth());
+        System.out.println("Name: " + getName() + "\n Age: " + getAge());
     }
 }

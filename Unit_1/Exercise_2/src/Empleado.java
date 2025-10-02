@@ -1,13 +1,16 @@
 public class Empleado extends Persona
 {
+    // fields.
     private double _grossSalary;
 
+    // constructor.
     public Empleado(String name, String birthDate, double grossSalary)
     {
         super(name, birthDate);
         setGrossSalary(grossSalary);
     }
 
+    // properties.
     public double getGrossSalary()
     {
         return _grossSalary;
@@ -23,6 +26,7 @@ public class Empleado extends Persona
         _grossSalary = grossSalary;
     }
 
+    // methods.
     @Override
     public void showData()
     {

@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -33,6 +32,14 @@ public class Cliente extends Persona
         }
     }
 
+    public Set<Empresa> getIsClientOf() {
+        return _isClientOf;
+    }
+
+    public void setIsClientOf(Set<Empresa> isClientOf) {
+        _isClientOf = isClientOf;
+    }
+
     @Override
     public void showData()
     {
@@ -41,5 +48,6 @@ public class Cliente extends Persona
         String msj = getTelephone() != null ? "\n Telephone: " + getTelephone(): "\n Telephone not available.";
         System.out.println(msj);
     }
+
 
 }
